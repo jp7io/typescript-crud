@@ -7,6 +7,7 @@ export const RecordForm = <T extends Record>({
   FormFields,
   activeRecord,
   submitAction,
+  success,
 }: RecordFormProps<T>) => {
   const { formState, setFormState, handleChange, handleSubmit } = useForm<T>(
     activeRecord,
@@ -14,10 +15,10 @@ export const RecordForm = <T extends Record>({
   );
 
   useEffect(() => {
-    if (activeRecord) {
+    if (activeRecord.id || success) {
       setFormState(activeRecord);
     }
-  }, [setFormState, activeRecord]);
+  }, [setFormState, activeRecord, success]);
 
   return (
     <div>

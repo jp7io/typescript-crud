@@ -7,6 +7,7 @@ export const RecordEdit = <T extends Record>({
   activeRecord,
   update,
   remove,
+  success,
 }: RecordEditProps<T>) => {
   return (
     <div className="edit">
@@ -18,6 +19,7 @@ export const RecordEdit = <T extends Record>({
         FormFields={FormFields}
         activeRecord={activeRecord}
         submitAction={update}
+        success={success}
       />
     </div>
   );
