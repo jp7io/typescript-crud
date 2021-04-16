@@ -1,3 +1,4 @@
+import { AxiosError } from 'axios';
 import { Action } from '../hooks/useMutation';
 import { IChangeElement } from '../hooks/useForm';
 
@@ -15,6 +16,8 @@ export interface RecordListProps<T> {
   emptyRecord: T;
   activeRecord: T;
   setActiveRecord: Function;
+  loading: boolean;
+  error?: AxiosError;
 }
 
 export interface ListItemProps<T> {

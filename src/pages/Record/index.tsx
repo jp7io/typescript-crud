@@ -13,7 +13,10 @@ export const RecordIndex = <T extends Record>({
   emptyRecord,
 }: RecordIndexProps<T>) => {
   const [activeRecord, setActiveRecord] = useState<T>(emptyRecord);
-  const { records, setVersion } = useFetch<T>(apiPath, apiOptions);
+  const { records, setVersion, loading, error } = useFetch<T>(
+    apiPath,
+    apiOptions
+  );
 
   const callback = () => {
     setVersion(+new Date());
@@ -29,6 +32,8 @@ export const RecordIndex = <T extends Record>({
           emptyRecord={emptyRecord}
           activeRecord={activeRecord}
           setActiveRecord={setActiveRecord}
+          loading={loading}
+          error={error}
         />
         <RecordMutations<T>
           FormFields={FormFields}
