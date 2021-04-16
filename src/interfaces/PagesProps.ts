@@ -11,8 +11,8 @@ export interface RecordIndexProps<T> {
 }
 
 export interface RecordListProps<T> {
-  records: T[];
   ListItem: React.FC<ListItemProps<T>>;
+  records: T[];
   emptyRecord: T;
   activeRecord: T;
   setActiveRecord: Function;

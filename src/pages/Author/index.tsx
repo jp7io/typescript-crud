@@ -13,9 +13,9 @@ export const AuthorIndex: React.FC = () => {
   return (
     <RecordIndex<Author>
       ListItem={AuthorListItem}
-      FormFields={AuthorFormFields}
       apiPath="authors"
       apiOptions={apiOptions}
+      FormFields={AuthorFormFields}
       emptyRecord={emptyRecord}
     />
   );

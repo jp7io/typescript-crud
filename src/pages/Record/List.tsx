@@ -5,8 +5,8 @@ import { Status } from '../../components/Status';
 import { RecordError } from '../../components/RecordError';
 
 export const RecordList = <T extends Record>({
-  records,
   ListItem,
+  records,
   emptyRecord,
   activeRecord,
   setActiveRecord,

@@ -27,8 +27,8 @@ export const RecordIndex = <T extends Record>({
     <div className="page">
       <div className="content">
         <RecordList<T>
-          records={records}
           ListItem={ListItem}
+          records={records}
           emptyRecord={emptyRecord}
           activeRecord={activeRecord}
           setActiveRecord={setActiveRecord}

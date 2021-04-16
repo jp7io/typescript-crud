@@ -13,9 +13,9 @@ export const ArticleIndex: React.FC = () => {
 
   return (
     <RecordIndex<Article>
+      ListItem={ArticleListItem}
       apiPath="articles"
       apiOptions={apiOptions}
-      ListItem={ArticleListItem}
       FormFields={ArticleFormFields}
       emptyRecord={emptyRecord}
     />
