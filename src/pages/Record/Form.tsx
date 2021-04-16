@@ -6,8 +6,12 @@ import { useForm } from '../../hooks/useForm';
 export const RecordForm = <T extends Record>({
   FormFields,
   activeRecord,
+  submitAction,
 }: RecordFormProps<T>) => {
-  const { formState, setFormState, handleChange } = useForm<T>(activeRecord);
+  const { formState, setFormState, handleChange, handleSubmit } = useForm<T>(
+    activeRecord,
+    submitAction
+  );
 
   useEffect(() => {
     if (activeRecord) {
@@ -17,7 +21,7 @@ export const RecordForm = <T extends Record>({
 
   return (
     <div>
-      <form>
+      <form onSubmit={handleSubmit}>
         <FormFields formState={formState} handleChange={handleChange} />
         <input type="submit" />
       </form>

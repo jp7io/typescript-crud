@@ -1,3 +1,4 @@
+import { Action } from '../hooks/useMutation';
 import { IChangeElement } from '../hooks/useForm';
 
 export interface RecordIndexProps<T> {
@@ -23,21 +24,26 @@ export interface ListItemProps<T> {
 export interface RecordMutationsProps<T> {
   FormFields: React.FC<FormFieldsProps<T>>;
   activeRecord: T;
+  apiPath: string;
 }
 
 export interface RecordNewProps<T> {
   FormFields: React.FC<FormFieldsProps<T>>;
   activeRecord: T;
+  create: Action;
 }
 
 export interface RecordEditProps<T> {
   FormFields: React.FC<FormFieldsProps<T>>;
   activeRecord: T;
+  update: Action;
+  remove: Action;
 }
 
 export interface RecordFormProps<T> {
   FormFields: React.FC<FormFieldsProps<T>>;
   activeRecord: T;
+  submitAction: Action;
 }
 
 export interface FormFieldsProps<T> {
