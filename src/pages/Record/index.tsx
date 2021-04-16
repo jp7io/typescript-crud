@@ -13,7 +13,12 @@ export const RecordIndex = <T extends Record>({
   emptyRecord,
 }: RecordIndexProps<T>) => {
   const [activeRecord, setActiveRecord] = useState<T>(emptyRecord);
-  const { records } = useFetch<T>(apiPath, apiOptions);
+  const { records, setVersion } = useFetch<T>(apiPath, apiOptions);
+
+  const callback = () => {
+    setVersion(+new Date());
+    setActiveRecord(emptyRecord);
+  };
 
   return (
     <div className="page">
@@ -29,6 +34,7 @@ export const RecordIndex = <T extends Record>({
           FormFields={FormFields}
           activeRecord={activeRecord}
           apiPath={apiPath}
+          callback={callback}
         />
       </div>
     </div>

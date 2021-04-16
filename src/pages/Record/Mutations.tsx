@@ -8,8 +8,9 @@ export const RecordMutations = <T extends Record>({
   FormFields,
   activeRecord,
   apiPath,
+  callback,
 }: RecordMutationsProps<T>) => {
-  const { create, update, remove } = useMutation<T>(apiPath);
+  const { create, update, remove } = useMutation<T>(apiPath, callback);
 
   return (
     <div className="mutations">

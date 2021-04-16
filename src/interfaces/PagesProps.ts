@@ -25,6 +25,7 @@ export interface RecordMutationsProps<T> {
   FormFields: React.FC<FormFieldsProps<T>>;
   activeRecord: T;
   apiPath: string;
+  callback: Function;
 }
 
 export interface RecordNewProps<T> {
