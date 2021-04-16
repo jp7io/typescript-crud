@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { Record } from '../../interfaces/RecordEntities';
 import { RecordIndexProps } from '../../interfaces/PagesProps';
 import { useFetch } from '../../hooks/useFetch';
@@ -11,15 +12,22 @@ export const RecordIndex = <T extends Record>({
   FormFields,
   emptyRecord,
 }: RecordIndexProps<T>) => {
+  const [activeRecord, setActiveRecord] = useState<T>(emptyRecord);
   const { records } = useFetch<T>(apiPath, apiOptions);
 
   return (
     <div className="page">
       <div className="content">
-        <RecordList<T> records={records} ListItem={ListItem} />
+        <RecordList<T>
+          records={records}
+          ListItem={ListItem}
+          emptyRecord={emptyRecord}
+          activeRecord={activeRecord}
+          setActiveRecord={setActiveRecord}
+        />
         <RecordMutations<T>
           FormFields={FormFields}
-          activeRecord={emptyRecord}
+          activeRecord={activeRecord}
         />
       </div>
     </div>
