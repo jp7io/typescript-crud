@@ -1,13 +1,293 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+* {
+  font-family: sans-serif;
+  box-sizing: border-box;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+body {
+  margin: 0;
+  color: #fff;
+  background: #333;
+  font-size: 18px;
+  line-height: 1.2em;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+.App {
+  display: flex;
+  flex-flow: column;
+  height: 100%;
+}
+
+header {
+  padding: 20px;
+  border-bottom: 1px solid #fff;
+}
+
+header h1 {
+  display: flex;
+  align-items: center;
+}
+
+header .subtitle {
+  font-size: 18px;
+  background: #666;
+  color: #fff;
+  border-radius: 5px;
+  margin-left: 10px;
+  padding: 10px;
+  font-weight: normal;
+}
+
+.navigation {
+  display: flex;
+  justify-content: space-between;
+}
+
+.navigation .internal,
+.navigation .external {
+  display: flex;
+}
+
+.navigation button,
+.navigation a.button {
+  margin-bottom: 0;
+  color: #fff;
+  background: transparent;
+  border: 1px solid #fff;
+}
+
+.navigation button.active {
+  color: #000;
+  background: #fff;
+}
+
+.navigation a.button {
+  text-decoration: none;
+  margin-right: 0;
+}
+
+h1,
+h2 {
+  margin-top: 5px;
+  margin-bottom: 20px;
+}
+
+.page {
+  flex-grow: 1;
+  display: flex;
+  flex-flow: column;
+}
+
+.status {
+  margin-left: -20px;
+  padding: 10px 20px;
+  background: #ccc;
+  color: #333;
+  font-size: smaller;
+  position: fixed;
+  bottom: 0;
+  opacity: 0.9;
+}
+
+.status-text {
+  animation: blinker 2s linear infinite;
+}
+
+@keyframes blinker {
+  50% {
+    opacity: 0;
+  }
+}
+
+.error {
+  padding: 20px;
+  margin: -20px -20px 20px -20px;
+  background: #c00;
+  color: #fff;
+  border-bottom: 1px solid #fff;
+  font-size: smaller;
+}
+
+.error ul {
+  margin: 10px 0px 0px;
+}
+
+.content {
+  display: flex;
+  flex-grow: 1;
+}
+
+.list,
+.mutations {
+  padding: 20px;
+}
+
+.list {
+  background: #000;
+  border-right: 1px solid #666;
+  min-width: 250px;
+}
+
+.mutations {
+  width: 100%;
+}
+
+.list ul {
+  list-style-type: none;
+  margin: 0 -20px;
+  padding: 0;
+  border-top: 1px solid #333;
+}
+
+.list li {
+  padding: 10px 20px;
+  border-bottom: 1px solid #333;
+  cursor: pointer;
+}
+
+.list li .title {
+  color: #ccc;
+}
+
+.list li .author {
+  margin-top: 3px;
+  font-style: italic;
+  color: #666;
+}
+
+.list li:hover {
+  background: #222;
+}
+
+.list li.active {
+  background: #333;
+}
+
+.list li.active .title {
+  color: #0f0;
+}
+
+.list li.active .author {
+  color: #999;
+}
+
+label {
+  display: block;
+  color: #999;
+  margin-bottom: 5px;
+}
+
+input[type='text'],
+input[type='submit'],
+button,
+select,
+textarea,
+a.button {
+  font-size: 18px;
+  border-radius: 5px;
+  border: 1px solid #999;
+  padding: 10px;
+  margin: 0 15px 15px 0;
+  color: #fff;
+  background: #000;
+  -webkit-appearance: none;
+}
+
+input[type='text'],
+select,
+textarea {
+  width: 100%;
+  max-width: 500px;
+}
+
+input[type='submit'],
+button,
+a.button {
+  padding: 5px 10px;
+  color: #0f0;
+  background: transparent;
+  border: 1px solid #0f0;
+}
+
+input[type='submit'],
+button.bt-new {
+  color: #0f0;
+  background: transparent;
+  border: 1px solid #0f0;
+}
+
+button.bt-remove {
+  color: #f00;
+  background: transparent;
+  border: 1px solid #f00;
+  float: right;
+  margin-right: 0;
+}
+
+@media screen and (max-width: 800px) {
+  body {
+    font-size: 14px;
+  }
+
+  header {
+    padding: 15px;
+  }
+
+  header h1 {
+    font-size: 18px;
+  }
+
+  header .subtitle {
+    font-size: 14px;
+  }
+
+  h2 {
+    font-size: 16px;
+  }
+
+  .status {
+    margin-left: -15px;
+    padding: 10px 15px;
+  }
+
+  .error,
+  .list,
+  .mutations {
+    padding: 15px;
+  }
+
+  .error {
+    margin: -15px -15px 15px -15px;
+  }
+
+  .list {
+    width: 35%;
+    min-width: 35%;
+    overflow-x: hidden;
+  }
+
+  .list ul {
+    margin: 0 -15px;
+  }
+
+  .list li {
+    padding: 10px 15px;
+    white-space: nowrap;
+  }
+
+  input[type='text'],
+  input[type='submit'],
+  button,
+  select,
+  textarea,
+  a.button {
+    font-size: 14px;
+    padding: 5px 10px;
+    margin: 0 10px 10px 0;
+  }
 }
