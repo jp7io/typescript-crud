@@ -2,7 +2,7 @@ import { useState } from 'react';
 import axios, { AxiosError } from 'axios';
 import { Record } from '../interfaces/RecordEntities';
 
-export type Action = (record?: any) => Promise<void>;
+export type Action<T> = (record: T) => Promise<void>;
 
 export const useMutation = <T extends Record>(
   path: string,
@@ -37,15 +37,15 @@ export const useMutation = <T extends Record>(
     };
   };
 
-  const create: Action = wrap(async (record: T) => {
+  const create: Action<T> = wrap(async (record: T) => {
     await axios.post(url, record);
   });
 
-  const update: Action = wrap(async (record: T) => {
+  const update: Action<T> = wrap(async (record: T) => {
     await axios.put(`${url}/${record.id}`, record);
   });
 
-  const remove: Action = wrap(async (record: T) => {
+  const remove: Action<T> = wrap(async (record: T) => {
     await axios.delete(`${url}/${record.id}`);
   });
 

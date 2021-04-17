@@ -6,7 +6,7 @@ export type IChangeElement =
   | HTMLSelectElement
   | HTMLTextAreaElement;
 
-export const useForm = <T>(initialState: T, handleAction: Action) => {
+export const useForm = <T>(initialState: T, handleAction: Action<T>) => {
   const [formState, setFormState] = useState<T>(initialState);
 
   const handleChange = (event: React.ChangeEvent<IChangeElement>): void => {

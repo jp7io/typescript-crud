@@ -34,22 +34,22 @@ export interface RecordMutationsProps<T> {
 export interface RecordNewProps<T> {
   FormFields: React.FC<FormFieldsProps<T>>;
   activeRecord: T;
-  create: Action;
+  create: Action<T>;
   success?: boolean;
 }
 
 export interface RecordEditProps<T> {
   FormFields: React.FC<FormFieldsProps<T>>;
   activeRecord: T;
-  update: Action;
-  remove: Action;
+  update: Action<T>;
+  remove: Action<T>;
   success?: boolean;
 }
 
 export interface RecordFormProps<T> {
   FormFields: React.FC<FormFieldsProps<T>>;
   activeRecord: T;
-  submitAction: Action;
+  submitAction: Action<T>;
   success?: boolean;
 }
 
