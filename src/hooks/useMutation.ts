@@ -14,8 +14,8 @@ export const useMutation = <T extends Record>(
 
   const url = `${process.env.REACT_APP_API}/${path}`;
 
-  const wrap = (fn: Function) => {
-    return async (record?: T) => {
+  const wrap = (fn: Action<T>) => {
+    return async (record: T) => {
       setProcesing(true);
       setSuccess(undefined);
       setError(undefined);
