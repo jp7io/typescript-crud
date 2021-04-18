@@ -27,7 +27,6 @@ export const useMutation = <T extends Record>(
           }
         })
         .catch((error: Error) => {
-          setProcesing(false);
           setSuccess(false);
           setError(error as AxiosError);
         })
