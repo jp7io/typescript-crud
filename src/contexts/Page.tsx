@@ -7,7 +7,7 @@ export enum Page {
 
 type ContextType = {
   page: Page;
-  setPage: (Page: Page) => void;
+  setPage: (page: Page) => void;
 };
 
 const Context = createContext<ContextType>({
