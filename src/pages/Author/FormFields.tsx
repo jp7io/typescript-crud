@@ -10,7 +10,7 @@ export const AuthorFormFields: React.FC<IProps> = ({
   return (
     <div>
       <div>
-        <label>Title</label>
+        <label>Name</label>
         <input
           type="text"
           name="name"
