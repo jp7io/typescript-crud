@@ -5,7 +5,7 @@ interface IProps {
   error: AxiosError;
 }
 
-export const RecordError: React.FC<IProps> = ({ error }: IProps) => {
+export const RecordError: React.FC<IProps> = ({ error }) => {
   const validationErrors = error?.response?.data
     ?.validation as ValidationError[];
 

@@ -2,12 +2,10 @@ interface IProps {
   text: string;
 }
 
-export const Status: React.FC<IProps> = ({ text }: IProps) => {
+export const Status: React.FC<IProps> = ({ text }) => {
   return (
-    <div>
-      <div className="status">
-        <span className="status-text">{text}</span>
-      </div>
+    <div className="status">
+      <span className="status-text">{text}</span>
     </div>
   );
 };
