@@ -2,7 +2,7 @@ import { AxiosError } from 'axios';
 import { ValidationError } from 'class-validator';
 
 interface IProps {
-  error: AxiosError;
+  error: AxiosError<any>;
 }
 
 export const RecordError: React.FC<IProps> = ({ error }) => {
@@ -15,7 +15,7 @@ export const RecordError: React.FC<IProps> = ({ error }) => {
         <b>Message:</b> {error.message}
       </div>
       <div>
-        <b>URL:</b> {error.config.url}
+        <b>URL:</b> {error.config?.url}
       </div>
       {error.response?.data.message && (
         <div>

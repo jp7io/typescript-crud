@@ -17,7 +17,11 @@ const Context = createContext<ContextType>({
 
 export const usePage = () => useContext(Context);
 
-export const PageStore: React.FC = ({ children }) => {
+type PageStoreProps = {
+  children: React.ReactNode;
+};
+
+export const PageStore: React.FC<PageStoreProps> = ({ children }) => {
   const [page, setPage] = useState(Page.Articles);
   return (
     <Context.Provider value={{ page, setPage }}>{children}</Context.Provider>
