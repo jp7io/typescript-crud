@@ -4,20 +4,20 @@
 
 #### Step-by-Step Tutorial (Start Here!)
 
-https://github.com/jp7internet/typescript-crud/wiki
+https://github.com/jp7io/typescript-crud/wiki
 
 #### Live Demo
 
-* This Frontend: https://jp7internet.github.io/typescript-crud
+* This Frontend: https://jp7io.github.io/typescript-crud
 * API (Backend): https://typescript-crud-api.herokuapp.com
 
 #### Screenshots
 
 | Interface | Structure |
 | ------------- | ------------- |
-| ![Interface](https://github.com/jp7internet/typescript-crud/wiki/images/edit.png) | ![Structure](https://github.com/jp7internet/typescript-crud/wiki/images/structure.png) |
+| ![Interface](https://github.com/jp7io/typescript-crud/wiki/images/edit.png) | ![Structure](https://github.com/jp7io/typescript-crud/wiki/images/structure.png) |
 
-More: https://github.com/jp7internet/typescript-crud/wiki/Screenshots
+More: https://github.com/jp7io/typescript-crud/wiki/Screenshots
 
 #### Includes
 
